@@ -1,5 +1,5 @@
 import '../styles/MyCard.css';
-import PropTypes, {instanceOf} from 'prop-types'
+import PropTypes, {instanceOf} from 'prop-types';
 import {Jeu} from "../utils/models/Jeu";
 
 const MyCard = ({jeu : game}) => {
