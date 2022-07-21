@@ -7,6 +7,15 @@ main {
   margin: 50px auto;
 }
 
+.flex-title {
+  display: flex;
+  justify-content: space-between;
+  text-align: start;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h2 {
   margin-bottom: 70px;
 }

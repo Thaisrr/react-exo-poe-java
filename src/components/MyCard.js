@@ -2,7 +2,7 @@ import '../styles/MyCard.css';
 import PropTypes, {instanceOf} from 'prop-types';
 import {Jeu} from "../utils/models/Jeu";
 
-const MyCard = ({jeu : game}) => {
+const MyCard = ({jeu : game, action}) => {
     // { jeu : game } -> décomposition
     // const game = props.jeu
 
@@ -22,6 +22,13 @@ const MyCard = ({jeu : game}) => {
                 <h3>{game.title}</h3>
                 <p>— {game.studio}</p>
                 <p>{game.description}</p>
+            </div>
+            <div className='card-footer'>
+                <button className='secondary' onClick={() => action(game, 'delete')}>Supprimer</button>
+
+                <button className='primary' onClick={()=> action(game, 'update')}>
+                    {game.finished? 'Joué' : 'Pas joué'}
+                </button>
             </div>
         </div>
     )
