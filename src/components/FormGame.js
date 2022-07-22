@@ -1,16 +1,23 @@
-import {set, useForm} from "react-hook-form";
-import {useState} from "react";
+import { useForm} from "react-hook-form";
+import '../styles/FormGame.css'
+import {create} from "../utils/service/GameService";
 
-const FormGame = ({submit}) => {
+const FormGame = ({push}) => {
 
     const {register, handleSubmit, formState: {errors}, reset} = useForm();
+
+    async function save(game) {
+        const result = await create(game);
+        push(result);
+        reset();
+    }
 
 
     return(
         <>
-            <h2>Nouveau Jeu</h2>
+            <h2 className='form-title'><span>Nouveau Jeu</span></h2>
 
-            <form onSubmit={handleSubmit((game) => submit(game))}>
+            <form onSubmit={handleSubmit(save)}>
                 <div>
                     <label htmlFor='name'>Nom</label>
                     <input id='name'{...register('title', {

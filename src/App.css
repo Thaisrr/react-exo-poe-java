@@ -21,11 +21,31 @@ h2 {
 }
 
 .grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 footer {
   margin: 50px 0;
+}
+h2 {
+  width: 80%;
+}
+h2 span {
+  position: relative;
+  width: fit-content;
+}
+
+h2 span:before {
+  content: '';
+  display: block;
+  width: 110%;
+  height: 50%;
+  position: absolute;
+  background-color: #ff73ea;
+  transform: translateX(5%) translateY(100%);
+  opacity: 20%;
+  clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0 100% );
+
 }
