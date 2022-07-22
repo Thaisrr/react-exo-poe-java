@@ -18,11 +18,11 @@ const Home = () => {
         getAll().then(res => setGames(res))
     }, [])
 
-    const saveGame = (game) => {
+    const saveGame = (new_game) => {
         //const game = new Jeu(title, description, studio, image);
-        const updated = [...games];
-        updated.push(game);
-        setGames(updated);
+        //const updated = [...games];
+        //updated.push(game);
+        setGames([...games, new_game ]);
     }
 
 
